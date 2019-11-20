@@ -1,7 +1,8 @@
 
 runSCNorm<-function(Seurat_Obj)
 {
-  
+  library(SCnorm)
+  library(Seurat)
   Conditions = Idents(Seurat_Obj)
   umiData <- SingleCellExperiment::SingleCellExperiment(assays = list('counts' = Seurat_Obj@assays$RNA@counts))
   
