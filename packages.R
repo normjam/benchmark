@@ -3,6 +3,7 @@ install.packages("devtools")
 
 library(devtools)
 devtools::install_github("rhondabacher/SCnorm")
+devtools::install_github("catavallejos/BASiCS", ref = "batches")
 
 install.packages(c("RcppEigen", "urltools", "Rtsne","BiocManager","robustbase"))
 
