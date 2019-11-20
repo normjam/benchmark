@@ -23,8 +23,10 @@ for dataset_name in datasets:
     data = anndata.read_h5ad(dataset_name)
     print(f"Running LogNorm on dataset {dataset_name}")
     LogNormalizationRunner(data, VERBOSE).run()
-    print(f"Running GLMPCA on dataset {dataset_name}")
+    print(f"Running GLMPCA (Poisson) on dataset {dataset_name}")
     GLMPCAMethodRunner(data, VERBOSE).run()
+    print(f"Running GLMPCA (Negative Binomial) on dataset {dataset_name}")
+    GLMPCAMethodRunner(data, VERBOSE, likelihood="nb").run()
 
 
 def clean_up():
