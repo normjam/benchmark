@@ -1,5 +1,5 @@
 import numpy as np
-from normbench.methods import sctransform_method_runner as a2s
+from normbench.methods import ad2seurat as a2s
 from normbench.methods.data import pbmc3k
 
 def test_pyScTransform():
@@ -11,4 +11,4 @@ def test_pyScTransform():
     assert 'normalized' in adata.layers
 
     # Test functionality
-    assert np.isclose(adata.layers['normalized'][2,7], 0.69314718)
+    assert np.isclose(adata.layers['normalized'][0,0], -0.033651642)
