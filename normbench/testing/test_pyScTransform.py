@@ -1,9 +1,9 @@
-import scanpy as sc
 import numpy as np
 from normbench.methods import ad2seurat as a2s
+from normbench.methods.data import pbmc3k
 
 def test_pyScTransform():
-    adata = sc.datasets.pbmc3k()
+    adata = pbmc3k()
 
     a2s.pyScTransform(adata)
 
