@@ -1,5 +1,6 @@
 import os
 
+import anndata
 import wget
 
 from methods import LogNormalizationRunner, GLMPCAMethodRunner
@@ -19,11 +20,11 @@ for dataset_name, dataset_url in datasets.items():
 
 # Run datasets on existing methods
 for dataset_name in datasets:
-    file_pointer = open(dataset_name, 'rb')
+    data = anndata.read_h5ad(dataset_name)
     print(f"Running LogNorm on dataset {dataset_name}")
-    LogNormalizationRunner(file_pointer, VERBOSE).run()
+    LogNormalizationRunner(data, VERBOSE).run()
     print(f"Running GLMPCA on dataset {dataset_name}")
-    GLMPCAMethodRunner(file_pointer, VERBOSE).run()
+    GLMPCAMethodRunner(data, VERBOSE).run()
 
 
 def clean_up():
