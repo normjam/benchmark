@@ -29,11 +29,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-COPY packages.R /app/packages.R
+COPY . .
 
 RUN pip3 install -r requirements.txt
-
 RUN Rscript packages.R
+RUN pip3 install .
 
-ENTRYPOINT ["/run_benchmark.py"]
+ENTRYPOINT ["/app/run_benchmark.py"]
