@@ -1,38 +1,41 @@
+import anndata2ri
+import rpy2.robjects as ro
 import scanpy as sc
 from scipy.sparse import issparse
 
 
-def pyScTransform(adata, output_file=None):
-    """
-    Function to call scTransform from Python
-    """
-    import rpy2.robjects as ro
-    import anndata2ri
+class ScTransformMethodRunner(MethodRunner):
+    def __init__(self, data, verbose):
+        MethodRunner.__init__(self, data, verbose)
 
-    ro.r('library(Seurat)')
-    ro.r('library(scater)')
-    anndata2ri.activate()
+    def run(self):
+        """
+        Function to call scTransform from Python
+        """
 
-    sc.pp.filter_genes(adata, min_cells=5)
-    
-    if issparse(adata.X):
-        if not adata.X.has_sorted_indices:
-            adata.X.sort_indices()
+        ro.r('library(Seurat)')
+        ro.r('library(scater)')
+        anndata2ri.activate()
 
-    for key in adata.layers:
-        if issparse(adata.layers[key]):
-            if not adata.layers[key].has_sorted_indices:
-                adata.layers[key].sort_indices()
+        sc.pp.filter_genes(self.data, min_cells=5)
 
-    ro.globalenv['adata'] = adata
+        if issparse(self.data.X):
+            if not self.data.X.has_sorted_indices:
+                self.data.X.sort_indices()
 
-    ro.r('seurat_obj = as.Seurat(adata, counts="X", data = NULL)')
+        for key in self.data.layers:
+            if issparse(self.data.layers[key]):
+                if not self.data.layers[key].has_sorted_indices:
+                    self.data.layers[key].sort_indices()
 
-    ro.r('res <- SCTransform(object=seurat_obj)')
+        ro.globalenv['adata'] = self.data
 
-    norm_x = ro.r('res@assays$SCT@data').T
+        ro.r('seurat_obj = as.Seurat(adata, counts="X", data = NULL)')
 
-    adata.layers['normalized'] = norm_x
+        ro.r('res <- SCTransform(object=seurat_obj)')
 
-    if output_file:
-        adata.write(output_file)
+        norm_x = ro.r('res@assays$SCT@data').T
+
+        self.data.layers['normalized'] = norm_x
+
+        self.dump_to_h5ad("scTransform")
