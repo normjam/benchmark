@@ -15,7 +15,7 @@ for dataset_name, dataset_url in datasets.items():
 # Run datasets on existing methods
 
 
-# Clean up
-for dataset_name in datasets:
-    print(f"\nDeleting dataset {dataset_name}")
-    os.remove(dataset_name)
+def clean_up():
+    for dataset_name in datasets:
+        print(f"\nDeleting dataset {dataset_name}")
+        os.remove(dataset_name)

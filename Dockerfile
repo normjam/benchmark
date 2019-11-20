@@ -18,3 +18,5 @@ COPY ./packages.R /app/packages.R
 RUN pip3 install -r requirements.txt
 
 RUN Rscript packages.R
+
+ENTRYPOINT ["/run_benchmark.py"]
