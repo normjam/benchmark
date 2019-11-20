@@ -8,4 +8,3 @@ scvi==0.5.0
 statsmodels
 torch
 torchvision
-wget
