@@ -1,8 +1,8 @@
-requests
 anndata==0.6.22.post1
-glmpca==0.1.0
 dataclasses
+glmpca==0.1.0
 matplotlib>=3.1.1
+requests
 scanpy
 scvi==0.5.0
 statsmodels
