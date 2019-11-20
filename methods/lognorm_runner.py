@@ -13,4 +13,4 @@ class LogNormalizationRunner(MethodRunner):
         sc.pp.log1p(self.data)
 
         # Normalized matrix
-        self.dump_to_loom("lognorm_normalized", self.data.X, {}, {})
+        self.dump_to_h5ad("lognorm_normalized")
