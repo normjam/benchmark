@@ -1,3 +1,4 @@
 torch
 torchvision
+glmpca==0.1.0
 scvi==0.5.0
