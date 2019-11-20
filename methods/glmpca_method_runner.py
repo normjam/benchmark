@@ -1,13 +1,13 @@
 import numpy as np
 from glmpca.glmpca import glmpca
 
-from ..method_runner import MethodRunner
+from methods.method_runner import MethodRunner
 
 
 class GLMPCAMethodRunner(MethodRunner):
 
-    def __init__(self, data, verbose, n_latent):
-        super(MethodRunner, self)
+    def __init__(self, data, verbose, n_latent=10):
+        MethodRunner.__init__(self, data, verbose)
         self.n_latent = n_latent
 
     def run(self):

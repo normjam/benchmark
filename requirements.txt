@@ -1,5 +1,9 @@
 glmpca==0.1.0
+dataclasses
+matplotlib>=3.1.1
+scanpy
 scvi==0.5.0
+statsmodels
 torch
 torchvision
 wget
