@@ -38,6 +38,7 @@ class ScViMethodRunner(MethodRunner):
         full = trainer.create_posterior(trainer.model, net_data, indices=np.arange(len(net_data)))
         latent, _, _ = full.sequential().get_latent()
         self.data.obsm['X_emb'] = latent
+        self.dump_to_loom("scvi_latent", latent, {}, {})
 
     def validate_method_parameters(self):
         """
