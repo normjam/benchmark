@@ -11,14 +11,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     cmake \
     libcurl4-openssl-dev \
-    libssl-dev \
     libgsl0-dev \
     libeigen3-dev \
     libssl-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
     libcairo2-dev \
     libxt-dev \
+    libxml2-dev \
     libgtk2.0-dev \
     libcairo2-dev \
     xvfb  \
