@@ -17,7 +17,7 @@ for data_name, data in datasets:
 
     print(f"Running scTransform on dataset {data_name}")
     ScTransformMethodRunner(data, VERBOSE).run()
-g
+
     print(f"Running LogNorm on dataset {data_name}")
     LogNormalizationRunner(data, VERBOSE).run()
 
