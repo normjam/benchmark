@@ -16,8 +16,8 @@ class GLMPCAMethodRunner(MethodRunner):
 
         # Normalized matrix
         norm = np.dot(res['factors'], res['loadings'].T)
-        self.adata.obsm['X_norm'] = norm
-        self.adata.obsm['X_emb'] = res['factors']
+        self.data.obsm['X_norm'] = norm
+        self.data.obsm['X_emb'] = res['factors']
 
         self.dump_to_loom("glmpca_normalized", norm, {}, {})
         self.dump_to_loom("glmpca_latent", res['factors'], {}, {})
