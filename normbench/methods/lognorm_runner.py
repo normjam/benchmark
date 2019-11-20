@@ -1,6 +1,6 @@
 import scanpy as sc
 
-from methods.method_runner import MethodRunner
+from .method_runner import MethodRunner
 
 
 class LogNormalizationRunner(MethodRunner):

@@ -1,7 +1,7 @@
 import numpy as np
 from glmpca.glmpca import glmpca
 
-from methods.method_runner import MethodRunner
+from .method_runner import MethodRunner
 
 
 class GLMPCAMethodRunner(MethodRunner):

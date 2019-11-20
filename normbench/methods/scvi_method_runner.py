@@ -5,17 +5,17 @@ from scvi.inference import UnsupervisedTrainer
 from scvi.models import VAE
 from sklearn.preprocessing import LabelEncoder
 
-from methods.method_runner import MethodRunner
+from .method_runner import MethodRunner
 
 
 class ScViMethodRunner(MethodRunner):
 
-    def __init__(self, data, verbose, batch, highly_variable_genes):
+    def __init__(self, data, verbose, batch=1, highly_variable_genes=None):
         MethodRunner.__init__(self, data, verbose)
         self.batch = batch
         self.highly_variable_genes = highly_variable_genes
 
-        self.validate_method_parameters(self.data, self.batch)
+        self.validate_method_parameters()
 
     def run(self):
         n_epochs = 100

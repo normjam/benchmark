@@ -1,9 +1,15 @@
+anndata==0.6.22.post1
+anndata2ri
 glmpca==0.1.0
 dataclasses
+loompy
 matplotlib>=3.1.1
+numpy
+requests
+rpy2
 scanpy
 scvi==0.5.0
+sklearn
 statsmodels
 torch
 torchvision
-wget
