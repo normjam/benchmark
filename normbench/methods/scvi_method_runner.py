@@ -5,7 +5,7 @@ from scvi.inference import UnsupervisedTrainer
 from scvi.models import VAE
 from sklearn.preprocessing import LabelEncoder
 
-from methods.method_runner import MethodRunner
+from .method_runner import MethodRunner
 
 
 class ScViMethodRunner(MethodRunner):

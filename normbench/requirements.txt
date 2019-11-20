@@ -1,8 +1,13 @@
+anndata2ri
 glmpca==0.1.0
 dataclasses
+loompy
 matplotlib>=3.1.1
+numpy
+rpy2
 scanpy
 scvi==0.5.0
+sklearn
 statsmodels
 torch
 torchvision
