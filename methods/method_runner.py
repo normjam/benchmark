@@ -15,3 +15,7 @@ class MethodRunner(abc.ABC):
     def dump_to_loom(self, filename, latent_matrix, row_attrs, col_attrs):
         filename = filename + "_" + str(int(time.time())) + ".loom"
         loompy.create(filename, latent_matrix, row_attrs, col_attrs)
+
+    def dump_to_h5ad(self, filename):
+        filename = filename + "_" + str(int(time.time())) + ".h5ad"
+        self.data.write(filename)
