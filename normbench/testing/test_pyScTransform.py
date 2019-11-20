@@ -1,5 +1,5 @@
 import numpy as np
-from normbench.methods import ad2seurat as a2s
+from normbench.methods import sctransform_method_runner as a2s
 from normbench.methods.data import pbmc3k
 
 def test_pyScTransform():

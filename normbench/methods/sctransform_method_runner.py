@@ -3,6 +3,8 @@ import rpy2.robjects as ro
 import scanpy as sc
 from scipy.sparse import issparse
 
+from .method_runner import MethodRunner
+
 
 class ScTransformMethodRunner(MethodRunner):
     def __init__(self, data, verbose):
