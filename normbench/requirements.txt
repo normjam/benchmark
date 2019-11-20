@@ -1,3 +1,5 @@
+requests
+anndata==0.6.22.post1
 glmpca==0.1.0
 dataclasses
 matplotlib>=3.1.1
@@ -6,4 +8,3 @@ scvi==0.5.0
 statsmodels
 torch
 torchvision
-wget
