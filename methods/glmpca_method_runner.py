@@ -26,6 +26,4 @@ class GLMPCAMethodRunner(MethodRunner):
         self.data.obsm['X_norm'] = norm
         self.data.obsm['X_emb'] = res['factors']
 
-        # self.dump_to_loom(f"glmpca_normalized_{self.likelihood}", norm, {}, {})
-        # self.dump_to_loom(f"glmpca_latent_{self.likelihood}", res['factors'], {}, {})
         self.dump_to_h5ad(f"glmpca_{self.likelihood}")
