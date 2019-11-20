@@ -10,7 +10,7 @@ run the benchmarking scripts. R dependencies are installed by `packages.R` and p
 
 Install [Docker](https://docs.docker.com/v17.09/engine/installation/). Run, from the root of the repository:
 
-`> docker build -t normjam Docker/`
+`> docker build -t normjam -f Dockerfile .`
 
 ## Use container
 

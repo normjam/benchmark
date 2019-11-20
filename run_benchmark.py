@@ -1,4 +1,5 @@
-from normbench.methods import LogNormalizationRunner, GLMPCAMethodRunner, data, ScViMethodRunner, ScTransformMethodRunner
+from normbench.methods import LogNormalizationRunner, GLMPCAMethodRunner, data, ScViMethodRunner, \
+    ScTransformMethodRunner
 
 VERBOSE = False
 
