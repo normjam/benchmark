@@ -1,4 +1,4 @@
-from .sctransform_method_runner import pyScTransform
 from .glmpca_method_runner import GLMPCAMethodRunner
 from .lognorm_runner import LogNormalizationRunner
+from .sctransform_method_runner import ScTransformMethodRunner
 from .scvi_method_runner import ScViMethodRunner
