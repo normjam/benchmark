@@ -28,7 +28,7 @@ def pyScTransform(adata, output_file=None):
 
     ro.r('seurat_obj = as.Seurat(adata, counts="X", data = NULL)')
 
-    ro.r('res <- SCTransform(object=seurat_obj, return.only.var.genes = FALSE)')
+    ro.r('res <- SCTransform(object=seurat_obj, return.only.var.genes = FALSE, do.correct.umi = FALSE)')
 
     norm_x = ro.r('res@assays$SCT@scale.data').T
 
