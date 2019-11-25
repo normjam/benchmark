@@ -37,7 +37,5 @@ WORKDIR /app
 COPY . .
 
 RUN pip3 install -r requirements.txt
-RUN Rscript packages.R
+#RUN Rscript packages.R
 RUN pip3 install .
-
-ENTRYPOINT ["/app/run_benchmark.py"]
