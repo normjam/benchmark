@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM r-base:3.6.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libblas-dev \
     liblapack-dev \
     gfortran \
-    r-base \
     python3.7 \
     python3-pip \
     python3-setuptools \
@@ -36,4 +35,4 @@ RUN pip3 install -r requirements.txt
 RUN Rscript packages.R
 RUN pip3 install .
 
-ENTRYPOINT ["/app/run_benchmark.py"]
+ENTRYPOINT ["/bin/bash"]

@@ -3,6 +3,7 @@ anndata2ri
 glmpca==0.1.0
 dataclasses
 loompy
+pytest
 matplotlib>=3.1.1
 numpy
 requests
