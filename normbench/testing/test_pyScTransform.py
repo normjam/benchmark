@@ -11,4 +11,4 @@ def test_pyScTransform():
     assert 'normalized' in adata.layers
 
     # Test functionality
-    assert np.isclose(adata.layers['normalized'][0,0], -0.033651642)
+    assert np.isclose(adata.layers['normalized'][0,0], -0.03377807)
